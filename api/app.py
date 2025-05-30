@@ -2,10 +2,10 @@ from flask import Flask,request
 
 app=Flask(__name__)
 @app.route('/')
-@app.route('/add')
 def index():
     return "Hello world"
 
+@app.route('/add')
 def add():
     _a= request.args.get('a',type=int)
     _b= request.args.get('b',type=int)
