@@ -8,3 +8,12 @@ def add():
     _b= request.args.get('b',type=int)
     return str( _a+_b)
     
+// thisiswsc> implement subtraction
+//  request: /sub?a=5&b=2
+// response: 3
+@app.route('/sub')
+def sub():
+    _a= request.args.get('a',type=int)
+    _b= request.args.get('b',type=int)
+    return str( _a-_b)
+    
