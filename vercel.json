@@ -1,7 +1,7 @@
 {
   "rewrites": [
-    { "source": "/:path*/:a/:b/:token", "destination": "/api/app" },
-    {"source": "/(.*)","destination":"/api/auth"},
-    {"source": "/(.*)","destination":"/api/app"}
+    { "source": "/:path*/:a/:b/:token", "destination": "/api" },
+    
+    {"source": "/(.*)","destination":"/api"}
   ]
 }
