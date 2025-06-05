@@ -1,5 +1,6 @@
 import jwt
 import datetime
+import os
 
 PUBLIC_KEY ="""-----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAycQH1KXOJk1+gO3hMHyq
@@ -11,11 +12,11 @@ iJ8+l4W1UxmdfZlpSX7CtGxJOBYX80K7Uf38YOXl5E2ese8FfIc21Az/nMAg2YqH
 GQIDAQAB
 -----END PUBLIC KEY-----"""
     # Load private key
-with open("private.pem","+rb") as f:
-    private_key=f.read()    
-
+# with open("private.pem","+rb") as f:
+    # private_key=f.read()    
+private_key = os.environ.get("PRIVATE_KEY")
     # Secret key (keep this secret!)
-secret_key = "your-secret-key"
+# secret_key = "your-secret-key"
 
     # Payload data
 payload = {
