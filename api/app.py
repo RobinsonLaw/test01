@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-from flask import Flask,request,make_response
+from flask import Flask,request,make_response,render_template,send_from_directory
 from utils.auth import encode,decode
-=======
-from flask import Flask,request,make_response,render_template
-from .utils.auth import encode,decode
->>>>>>> f3358fe1415de728f7278c9c6a7555981c54ae88
+
 
 app=Flask(__name__)
 @app.route('/')
@@ -51,3 +47,12 @@ def sub():
     _b= request.args.get('b',type=int)
     return str( _a-_b)
     
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('public', 'favicon.ico')
+@app.route('/favicon.png')
+def favicon_png():
+    return send_from_directory('public', 'favicon.png')
+
+if __name__ == "__main__":
+    app.run(debug=True)
