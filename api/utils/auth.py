@@ -12,9 +12,12 @@ iJ8+l4W1UxmdfZlpSX7CtGxJOBYX80K7Uf38YOXl5E2ese8FfIc21Az/nMAg2YqH
 GQIDAQAB
 -----END PUBLIC KEY-----"""
     # Load private key
-# with open("private.pem","+rb") as f:
-    # private_key=f.read()    
+
 private_key = os.environ.get("PRIVATE_KEY")
+if private_key is None:
+    with open("private.pem","+rb") as f:
+        private_key=f.read()    
+
     # Secret key (keep this secret!)
 # secret_key = "your-secret-key"
 
