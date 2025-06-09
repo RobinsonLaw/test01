@@ -1,5 +1,5 @@
 from flask import Flask,request,make_response
-from .utils.auth import encode,decode
+from utils.auth import encode,decode
 
 app=Flask(__name__)
 @app.route('/')
