@@ -1,5 +1,5 @@
 from flask import Flask,request,make_response,render_template,send_from_directory
-from utils.auth import encode,decode
+from .utils.auth import encode,decode
 
 
 app=Flask(__name__)
@@ -55,4 +55,4 @@ def favicon_png():
     return send_from_directory('public', 'favicon.png')
 
 # if __name__ == "__main__":
-#     app.run(debug=True)
+#     app.run(debug=True)flask
