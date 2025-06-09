@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 from flask import Flask,request,make_response
 from utils.auth import encode,decode
+=======
+from flask import Flask,request,make_response,render_template
+from .utils.auth import encode,decode
+>>>>>>> f3358fe1415de728f7278c9c6a7555981c54ae88
 
 app=Flask(__name__)
 @app.route('/')
 def index():
-    return "Hello world"
+    return render_template('home.html')
 
 @app.route('/getkey')
 def getkey():
