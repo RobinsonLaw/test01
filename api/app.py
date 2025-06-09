@@ -1,10 +1,10 @@
-from flask import Flask,request,make_response
+from flask import Flask,request,make_response,render_template
 from .utils.auth import encode,decode
 
 app=Flask(__name__)
 @app.route('/')
 def index():
-    return "Hello world"
+    return render_template('home.html')
 
 @app.route('/getkey')
 def getkey():
