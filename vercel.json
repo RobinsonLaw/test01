@@ -1,7 +1,18 @@
 {
-  "rewrites": [
-    { "source": "/:path*/:a/:b/:token", "destination": "/api" },
-    
-    {"source": "/(.*)","destination":"/api/app"}
+  "routes": [
+    {
+      "src": "/:path*/:a/:b/:token",
+      "dest": "/api"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/app"
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/**/*.py",
+      "use": "@vercel/python"
+    }
   ]
 }
