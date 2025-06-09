@@ -54,5 +54,5 @@ def favicon():
 def favicon_png():
     return send_from_directory('public', 'favicon.png')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
