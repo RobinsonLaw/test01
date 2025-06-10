@@ -2,7 +2,7 @@ from flask import Flask,request,make_response,render_template,send_from_director
 # try:
 # from utils.auth import encode,decode
 
-from auth import encode,decode
+from .auth import encode,decode
 # except ImportError:
     # from utils.auth import encode,decode
 
