@@ -1,8 +1,10 @@
 from flask import Flask,request,make_response,render_template,send_from_directory
-try:
-    from .utils.auth import encode,decode
-except ImportError:
-    from utils.auth import encode,decode
+# try:
+# from utils.auth import encode,decode
+
+from auth import encode,decode
+# except ImportError:
+    # from utils.auth import encode,decode
 
 app=Flask(__name__)
 @app.route('/')

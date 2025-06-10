@@ -15,7 +15,8 @@ GQIDAQAB
 
 private_key = os.environ.get("PRIVATE_KEY")
 if private_key is None:
-    with open("private.pem","+rb") as f:
+    filename=os.path.join(os.path.dirname(__file__), "private.pem")
+    with open(filename,"+rb") as f:
         private_key=f.read()    
 
     # Secret key (keep this secret!)
