@@ -30,9 +30,15 @@ payload = {
     }
 
 
-def encode():
+def encode(user_id=123, username="testuser", hours=1):
     # Encode JWT
     # encoded_jwt = jwt.encode(payload, secret_key, algorithm="HS256")
+    """Generates a signed JWT with user details valid for a given duration."""
+    payload = {
+        "user_id": user_id,
+        "username": username,
+        "exp": datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=hours)
+    }
     encoded_jwt = jwt.encode(payload,private_key,algorithm="RS256")
     # print("Encoded JWT:", encoded_jwt)
     return encoded_jwt
